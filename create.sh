@@ -1,5 +1,6 @@
 #!/bin/bash
-filedate = "aug-23"
+
+filedate="aug-23"
 for day in {1..31}; do
   # Generate a random number between 1 and 8 for the current day
   ranNum=$(( RANDOM % 8 + 1 ))
@@ -16,7 +17,7 @@ for day in {1..31}; do
     sleep 1
 
     # Set the Git committer date and time for the commit
-    commit_date="2023-08-${day}"
+    commit_date="2023-08-"$day" 09:00:00"
     GIT_COMMITTER_DATE="$commit_date" git commit -m "Commit on $day-$filedate" --date "$commit_date" --no-edit
 
     sleep 2
